@@ -3,7 +3,7 @@ terraform {
 }
 
 dependency "defaults" {
-  config_path = "../../defaults"
+  config_path = "../defaults"
 }
 
 inputs = {

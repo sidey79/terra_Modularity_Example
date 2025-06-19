@@ -25,15 +25,15 @@ infrastructure/
 ### 2. Projekt initialisieren
 
 ```bash
-cd infrastructure/live/prod/workload1
-terragrunt run-all init
+cd live/prod/workload1
+terragrunt init --all
 ```
 
 ### 3. Deployen
 
 ```bash
-terragrunt run-all plan
-terragrunt run-all apply
+terragrunt plan --all
+terragrunt apply --all
 ```
 
 ## 📦 Enthaltene Module
@@ -60,3 +60,39 @@ terragrunt run-all apply
 
 Bei Feedback, Features oder Bugs – gerne in einem Pull Request oder direkt via Issue.  
 Ansonsten: Viel Spaß beim Bauen! 😄🚀
+
+
+## ☁️ Nutzung mit GitHub Codespaces
+
+### ✅ Voraussetzungen
+
+- GitHub-Repo mit dieser Infrastruktur-Struktur
+- Zugriff auf GitHub Codespaces (mit Developer-Lizenz oder Enterprise)
+
+---
+
+### 🧰 Codespace starten
+
+1. Öffne dein Repository auf GitHub
+2. Klicke auf `<> Code` → **Codespaces** → `Create codespace on main`
+3. Der Codespace wird in VS Code im Browser geöffnet
+
+---
+
+### 🔧 Devcontainer (empfohlen)
+
+> 💡 Damit sind **Terraform**, **Terragrunt** und die **Azure CLI** sofort einsatzbereit
+
+---
+
+### 🚀 Bereitstellen in Codespaces
+
+```bash
+cd live/prod/workload1
+terragrunt init --all
+terragrunt plan --all
+terragrunt apply --all
+```
+
+Du brauchst nichts lokal zu installieren – alles läuft direkt im Codespace.  
+Ideal für Teams, Pull Requests und remote Deployment. 💙
