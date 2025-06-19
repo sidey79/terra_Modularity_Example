@@ -7,11 +7,11 @@ dependency "defaults" {
 }
 
 inputs = {
-  workload_name        = "orders"
-  location             = "westeurope"
-  resource_group_name  = "rg-prod"
-  tenant_id            = "00000000-0000-0000-0000-000000000000"
-  allowed_ips          = ["LogicApps.westeurope"]
+  workload_name       = "orders"
+  location            = "westeurope"
+  resource_group_name = "rg-prod"
+  tenant_id           = "00000000-0000-0000-0000-000000000000"
+  allowed_ips         = ["LogicApps.westeurope"]
 
   access_policies = [
     {

@@ -30,7 +30,7 @@ variable "allowed_ips" {
 
 variable "access_policies" {
   type = list(object({
-    object_id   = string
+    object_id = string
     permissions = object({
       keys         = list(string)
       secrets      = list(string)

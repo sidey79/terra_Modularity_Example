@@ -1,0 +1,12 @@
+repos:
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.99.4  # Aktuelle Version prüfen: https://github.com/antonbabenko/pre-commit-terraform/releases
+    hooks:
+      - id: terraform_fmt
+      #- id: terraform_validate
+      - id: terragrunt_fmt
+      #- id: terragrunt_validate
+      - id: terraform_trivy
+        files: ^prd-infra/
+      #- id: terrascan
+      #- id: terraform_docs

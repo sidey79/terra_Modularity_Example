@@ -1,11 +1,11 @@
 resource "azurerm_storage_account" "this" {
-  name                     = var.name
-  location                 = var.location
-  resource_group_name      = var.resource_group_name
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-  min_tls_version          = var.minimum_tls_version
-  allow_blob_public_access = var.allow_blob_public_access
+  name                      = var.name
+  location                  = var.location
+  resource_group_name       = var.resource_group_name
+  account_tier              = "Standard"
+  account_replication_type  = "LRS"
+  min_tls_version           = var.minimum_tls_version
+  allow_blob_public_access  = var.allow_blob_public_access
   enable_https_traffic_only = true
 
   identity {
@@ -21,10 +21,10 @@ resource "azurerm_storage_account" "this" {
   encryption {
     services {
       blob {
-        enabled           = true
+        enabled = true
       }
     }
-    key_source = "Microsoft.Keyvault"
+    key_source       = "Microsoft.Keyvault"
     key_vault_key_id = var.cmk_key_id
   }
 
@@ -47,7 +47,7 @@ resource "azurerm_storage_table" "tables" {
 }
 
 resource "azurerm_storage_management_policy" "lifecycle" {
-  count = length(var.lifecycle_rules) > 0 ? 1 : 0
+  count              = length(var.lifecycle_rules) > 0 ? 1 : 0
   storage_account_id = azurerm_storage_account.this.id
 
   rule = var.lifecycle_rules
