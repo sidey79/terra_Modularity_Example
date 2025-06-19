@@ -1,0 +1,14 @@
+{
+  "name": "Terraform Platform",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "1.6.6"
+    },
+    "ghcr.io/devcontainers/features/terragrunt:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/azure-cli:1": {}
+  },
+  "postCreateCommand": "az login --use-device-code"
+}
